@@ -6,35 +6,21 @@
  * @flow
  */
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-import React, {Component, Fragment} from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  View,
-} from 'react-native';
+import React, {Component} from 'react';
+import {Text, View} from 'react-native';
 
 import SelectMultiple from 'react-native-select-multiple';
 
 const fruits = ['Apples', 'Oranges', 'Pears'];
-// --- OR ---
-// const fruits = [
-//   { label: 'Apples', value: 'appls' },
-//   { label: 'Oranges', value: 'orngs' },
-//   { label: 'Pears', value: 'pears' }
-// ]
 
 class App extends Component {
-  state = {selectedFruits: []};
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      selectedFruits: [],
+    };
+  }
 
   onSelectionsChange = selectedFruits => {
     // selectedFruits is array of { label, value }
